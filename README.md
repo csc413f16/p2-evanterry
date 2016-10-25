@@ -1,6 +1,7 @@
 # Project 2
 ## Description
 This project is intended to:
+
 1. teach you how to draw to the android screen 
 2. get you to create a builder pattern 
 3. get you to use an iterator
@@ -21,6 +22,7 @@ the TODOs correctly.
 
 ## Setting up testing
 If you do not see a Run/Debug Configuration named "Instrumented":
+
 1. Click on the pulldown menu on the top Android Studio toolbar (should show "app"), and select Edit Configurations.
 2. The "Run/Debug Configurations" window should open.  
 3. In the upper left of the window, press the + and select Android Tests
