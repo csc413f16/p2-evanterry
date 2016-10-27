@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO: Your code goes here
+                addShape(ShapeType.PICTURE, v);
+
             }
         });
 
@@ -98,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO:  Your code goes here
+                addShape(ShapeType.RECTANGLE, v);
             }
         });
 
@@ -108,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO:  Your code goes here
+                addShape(ShapeType.CIRCLE, v);
             }
         });
 
@@ -118,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO: Your code goes here
+                clearCanvas();
             }
         });
 
@@ -141,6 +146,18 @@ public class MainActivity extends AppCompatActivity {
         float alpha = 0.0f;
 
         // TODO:  Your code goes here
+        while(it.hasNext()) {
+            Shape currentShape = it.next();
+            alpha = currentShape.getShapeAlpha();
+
+            if(alpha > 0.0f) {
+                currentShape.setShapeAlpha((alpha - .1f));
+            }
+            else if (alpha < 0.0f) {
+                currentShape.removeShape();
+            }
+        }
+
 
         return it;
     }
@@ -195,10 +212,17 @@ public class MainActivity extends AppCompatActivity {
 
         Shape newShape = null;
 
+        // TODO:  Your code goes here
         switch(shapeType){
-
-            // TODO:  Your code goes here
-
+            case RECTANGLE:
+                newShape = shapeFactory.getShape(getApplicationContext(), "RECTANGLE");
+                break;
+            case CIRCLE:
+                newShape = shapeFactory.getShape(getApplicationContext(), "CIRCLE");
+                break;
+            case PICTURE :
+                newShape = shapeFactory.getShape(getApplicationContext(), "PICTURE");
+                break;
         }
         shapesList.add(newShape);
 

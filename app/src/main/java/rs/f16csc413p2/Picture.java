@@ -32,14 +32,19 @@ public class Picture extends Shape {
      *
      */
     public void onDraw(Canvas canvas) {
-        // TODO:   Your code goes here
-
         /*
         * you need to figure out how to use BitmapFactory to decode the
         * resource of the drawable sfsu_logo into img which is then
         * sent to the canvas to be drawn as a bitmap.
         */
+        Random rand = new Random();
+
         // TODO:   Your code goes here
+        int width = canvas.getWidth();
+        int height = canvas.getHeight();
+        int ulx = rand.nextInt(width)+1;
+        int uly = rand.nextInt(height)+1;
+
         Bitmap img = BitmapFactory.decodeResource(getResources(), R.drawable.sfsu_logo);
         canvas.drawBitmap(img, ulx, uly, paint);
     }
